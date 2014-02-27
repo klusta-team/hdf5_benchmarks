@@ -1,6 +1,6 @@
 import os
 import sys
-import time
+import timeit
 import h5py
 import numpy as np
 
@@ -35,9 +35,9 @@ size = len(ind)
 with h5py.File(filename, "r") as f:
     a = f['/test']
     out = np.empty((len(ind),k,l), dtype=a.dtype)
-    t0 = time.clock()
+    t0 = timeit.default_timer()
     read(a, out)
-    t1 = time.clock()
+    t1 = timeit.default_timer()
     
 d = t1-t0
 bandwidth = size*k*l*2/(1024*1024.)/d
