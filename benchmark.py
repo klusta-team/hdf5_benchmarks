@@ -4,7 +4,7 @@ import time
 import h5py
 import numpy as np
 
-n, k, l = 100000, 50, 128
+n, k, l = 500000, 50, 128
 
 def create(filename):
     """Create a contiguous array of size (n,k,l)."""
